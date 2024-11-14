@@ -13,3 +13,7 @@ server.listen(PORT)
 server.on('listening', () => {
     console.log(`Servidor escuchando en el puerto ${PORT}`)
 })
+
+server.on('error', (error) => {
+    console.log(error)
+})
