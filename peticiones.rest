@@ -8,3 +8,19 @@ GET {{url}}/autores
 ###
 
 GET {{url}}/autores/6
+
+###
+
+POST {{url}}/autores
+Content-Type: application/json
+
+{
+    "nombre": "Pablo Altea",
+    "email": "pablo@gmail.com",
+    "imagen": "pablo.jpg"
+}
+
+//API POSTS
+
+###
+GET {{url}}/posts

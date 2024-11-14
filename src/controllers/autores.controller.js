@@ -1,5 +1,5 @@
 
-const { selectAll, selectById } = require("../models/autores.model")
+const { selectAll, selectById, insertAutor } = require("../models/autores.model")
 
 const getAllAutores = async (req, res, next) => {
     try {
@@ -21,6 +21,16 @@ const getAutoresById = async (req, res, next) => {
     }
 }
 
+const createAutor = async (req, res, next) => {
+    try {
+        const [result] = await insertAutor(req.body)
+        const [autor] = await selectById(result.insertId)
+        res.json(autor[0])
+    } catch (error) {
+        next(error)
+    }
+}
+
 module.exports = {
-    getAllAutores, getAutoresById
+    getAllAutores, getAutoresById, createAutor
 }
