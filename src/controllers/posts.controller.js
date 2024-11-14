@@ -24,7 +24,7 @@ const createPost = async (req, res, next) => {
     try {
         const [result] = await insertPost(req.body)
         const [post] = await selectById(result.insertId)
-        res.json(post[0])
+        res.status(201).json(post[0])
     } catch (error) {
         next(error)
     }
