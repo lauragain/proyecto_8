@@ -11,6 +11,10 @@ GET {{url}}/autores/6
 
 ###
 
+GET {{url}}/autores/5/posts
+
+###
+
 POST {{url}}/autores
 Content-Type: application/json
 

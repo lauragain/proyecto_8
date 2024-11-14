@@ -1,5 +1,5 @@
 
-const { selectAll, selectById, insertAutor } = require("../models/autores.model")
+const { selectAll, selectById, insertAutor, selectPostByAutor } = require("../models/autores.model")
 
 const getAllAutores = async (req, res, next) => {
     try {
@@ -21,6 +21,19 @@ const getAutoresById = async (req, res, next) => {
     }
 }
 
+const getPostsByAutor = async (req, res, next) => {
+    try {
+        const { autorId } = req.params
+        const [result] = await selectPostByAutor(autorId)
+        if (result.length === 0){
+            return res.status(404).json({ message: 'No se han encontrado posts de este autor'})
+        }
+        res.json(result)
+    } catch (error) {
+        next(error)
+    }
+}
+
 const createAutor = async (req, res, next) => {
     try {
         const [result] = await insertAutor(req.body)
@@ -32,5 +45,5 @@ const createAutor = async (req, res, next) => {
 }
 
 module.exports = {
-    getAllAutores, getAutoresById, createAutor
+    getAllAutores, getAutoresById, getPostsByAutor, createAutor
 }
