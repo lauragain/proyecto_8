@@ -30,3 +30,15 @@ GET {{url}}/posts
 GET {{url}}/posts/4
 
 
+###
+
+POST {{url}}/posts
+Content-Type: application/json
+
+{
+    "titulo": "Una investigación de dos ONG denuncia que el 10% de las latas de atún en Europa tienen más mercurio del permitido",
+    "descripcion": "El Ministerio de Sanidad tiene previsto arrancar en diciembre el primer gran estudio estatal para ver cómo nos afectan las sustancias químicas a las que estamos expuestos de forma cotidiana, una de las cuales es el mercurio. Tal y como adelantó EL PAÍS, la iniciativa se enmarca dentro de la nueva estructura nacional de biomonitorización humana y pretende medir los niveles de contaminantes en miles de voluntarios como primer paso para tomar luego medidas de salud pública basadas en la ciencia.",
+    "categoria": "Salud",
+    "autores_idautores": 5
+}
+
