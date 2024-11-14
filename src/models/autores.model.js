@@ -5,7 +5,7 @@ function selectAll(){
 }
 
 function selectById(id){
-    return pool.query('select * FROM autores WHERE idautores = ?', [id])
+    return pool.query('select * FROM autores where idautores = ?', [id])
 }
 
 function insertAutor({nombre, email, imagen}){

@@ -24,3 +24,9 @@ Content-Type: application/json
 
 ###
 GET {{url}}/posts
+
+###
+
+GET {{url}}/posts/4
+
+
